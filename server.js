@@ -3,9 +3,10 @@ const articlesRouter = require('./routes/articles');
 const mongoose = require('mongoose');
 const app = express();
 
-mongoose.connect('mongodb://localhost/blog',{ useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb://localhost/blog');
 
 app.set('view engine', 'ejs');
+ 
 app.use(express.urlencoded({ extended: false }));
 app.use('/articles', articlesRouter);
 
@@ -27,4 +28,3 @@ app.get('/', (req, res) => {
 app.listen(3000, () => {
   console.log('Server is running on port 3000');
 });
-   
