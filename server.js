@@ -1,11 +1,12 @@
+require('dotenv').config();
 const express = require('express');
 const articlesRouter = require('./routes/articles');
 const mongoose = require('mongoose');
-require('dotenv').config();
+
 const app = express();
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/blog');
-
+mongoose.connect(process.env.MONGODB_URI);
+ 
 app.set('view engine', 'ejs');
  
 app.use(express.urlencoded({ extended: false }));
@@ -29,3 +30,4 @@ app.get('/', (req, res) => {
 app.listen(3000, () => {
   console.log('Server is running on port 3000');
 });
+   
