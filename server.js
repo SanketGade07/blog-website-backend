@@ -1,9 +1,10 @@
 const express = require('express');
 const articlesRouter = require('./routes/articles');
 const mongoose = require('mongoose');
+require('dotenv').config();
 const app = express();
 
-mongoose.connect('mongodb://localhost/blog');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/blog');
 
 app.set('view engine', 'ejs');
  
