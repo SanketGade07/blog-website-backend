@@ -30,13 +30,14 @@
                     <p class="description mb-2">
                         <%= article.description %>
                     </p>
-                    <a href="/articles/read" class="btn btn-primary">Read More</a>
+                    <div><%=article.markdown%></div>
+                    <a href="/articles/<%=article.id%>" class="btn btn-primary">Read More</a>
                     <a href="/articles/edit" class="btn btn-info" style="color:white">Edit</a>
                     <a href="/articles/delete" class="btn btn-danger">Delete</a>
                 </div>
             </div>
         </div>
-    <%})%>
+    <%})%> 
     
 </body>
 </html>
