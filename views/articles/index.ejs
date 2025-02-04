@@ -33,7 +33,9 @@
                     <div><%=article.markdown%></div>
                     <a href="/articles/<%=article.id%>" class="btn btn-primary">Read More</a>
                     <a href="/articles/edit" class="btn btn-info" style="color:white">Edit</a>
-                    <a href="/articles/delete" class="btn btn-danger">Delete</a>
+                    <form action="/articles/<%=article.id%>?_method=DELETE" method="POST" class="">
+                        <button type="submit" class="btn btn-danger ">Delete</button>
+                    </form>
                 </div>
             </div>
         </div>

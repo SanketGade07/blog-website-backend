@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const Article = require('./models/article');
+const methodOverride = require('method-override');
 const articlesRouter = require('./routes/articles');
 const mongoose = require('mongoose');
 
@@ -11,6 +12,7 @@ mongoose.connect(process.env.MONGODB_URI);
 app.set('view engine', 'ejs');
  
 app.use(express.urlencoded({ extended: false }));
+app.use(methodOverride('_method'));
 app.use('/articles', articlesRouter);
 
  
