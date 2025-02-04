@@ -30,10 +30,10 @@
                     <p class="description mb-2">
                         <%= article.description %>
                     </p>
-                    <div><%=article.markdown%></div>
+                    <div><%-article.sanitizedHtml%></div>
                     <a href="/articles/<%=article.id%>" class="btn btn-primary">Read More</a>
                     <a href="/articles/edit" class="btn btn-info" style="color:white">Edit</a>
-                    <form action="/articles/<%=article.id%>?_method=DELETE" method="POST" class="">
+                    <form action="/articles/<%=article.id%>?_method=DELETE" method="POST" class="d-inline">
                         <button type="submit" class="btn btn-danger ">Delete</button>
                     </form>
                 </div>

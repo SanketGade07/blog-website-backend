@@ -35,6 +35,7 @@ router.post('/',async (req, res) => {
     article= await article.save();
     res.redirect(`/articles/${article.id}`);
   } catch (e) {
+    console.error('Error saving article:', e);
     res.render('articles/new', { article: article });
   }
 });
